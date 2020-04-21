@@ -53,6 +53,7 @@ function App() {
       id: count + 1,
       name: formValues.name,
       team: formValues.team,
+      projects: Object.values(formValues.projects)
     }
 
     setTeamMembers([...teamMembers, newMember])

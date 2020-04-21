@@ -22,7 +22,7 @@ const initialValues = {
 };
 
 function App() {
-  const [teamMembers, setTeamMembers] = useState([]);
+  const [teamMembers, setTeamMembers] = useState(initialTeamList);
 
   const [formValues, setFormValues] = useState(initialValues);
 
@@ -45,9 +45,9 @@ function App() {
 
   return (
     <div className="container">
-      <h1>Teams</h1>
+      <h1>Team Members</h1>
       <form>
-        <div>
+        <div className="inputWrapper">
           <label>Name:</label>
           <input
             name="name"
@@ -55,7 +55,7 @@ function App() {
             onChange={changeValues}
           ></input>
         </div>
-        <div>
+        <div className="inputWrapper">
           <label>Team:</label>
           <input
             name="team"
@@ -63,8 +63,8 @@ function App() {
             onChange={changeValues}
           ></input>
         </div>
-        <label>Projects:</label>
-        <div>
+        <h2>Projects:</h2>
+        <div className="inputWrapper">
           1{" "}
           <input
             name="project1"
@@ -72,7 +72,7 @@ function App() {
             onChange={changeProjects}
           ></input>
         </div>
-        <div>
+        <div className="inputWrapper">
           2{" "}
           <input
             name="project2"
@@ -80,7 +80,7 @@ function App() {
             onChange={changeProjects}
           ></input>
         </div>
-        <div>
+        <div className="inputWrapper">
           3{" "}
           <input
             name="project3"
@@ -89,7 +89,7 @@ function App() {
           ></input>
         </div>
       </form>
-      {initialTeamList.map((member) => {
+      {teamMembers.map((member) => {
         return (
           <div key={member.id} className="memberCard">
             <h2>{member.name}</h2>

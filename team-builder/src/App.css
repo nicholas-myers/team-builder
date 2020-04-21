@@ -5,12 +5,28 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 .container {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: column;
+}
+
+h1 {
+  font-size: 5rem;
+  text-decoration: underline;
+}
+h2 {
+  font-size: 3rem;
+}
+
+label {
+  font-size: 2rem;
 }
 
 form {
@@ -22,6 +38,11 @@ form {
   height: 20vh;
 }
 
+.inputWrapper {
+  width:100%;
+  display: flex;
+  justify-content: space-around;
+}
 /* .container div {
   width:100%;
   display: flex;

@@ -59,6 +59,8 @@ function App() {
     setTeamMembers([...teamMembers, newMember])
   }
 
+  const [memberToEdit, setMemberToEdit] = useState({})
+
   return (
     <div className="container">
       <h1>Team Members</h1>
@@ -117,7 +119,7 @@ function App() {
               return <li key={index}>{project}</li>
         
             })}
-            <button> Edit</button>
+            <button onClick={event => {setMemberToEdit(member)}}> Edit</button>
           </div>
         );
       })}

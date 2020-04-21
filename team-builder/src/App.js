@@ -93,7 +93,8 @@ function App() {
         return (
           <div key={member.id} className="memberCard">
             <h2>{member.name}</h2>
-            <h3>{member.team}</h3>
+            <h3>On Team: {member.team}</h3>
+            <h4>Projects</h4>
             {!!member.projects && !!member.projects.length && member.projects.map((project, index) => {
               return <li key={index}>{project}</li>
         

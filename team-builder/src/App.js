@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
+let count = 0
+
 const initialTeamList = [
   {
-    id: 0,
+    id: count,
     name: "Nick",
     team: "Lucas Greenwell",
     projects: ["D&D App", "Division 2 API", "Portfolio"],
@@ -44,10 +46,22 @@ function App() {
     });
   };
 
+  const submitTeamMember = (event) => {
+    event.preventDefault()
+
+    const newMember = {
+      id: count + 1,
+      name: formValues.name,
+      team: formValues.team,
+    }
+
+    setTeamMembers([...teamMembers, newMember])
+  }
+
   return (
     <div className="container">
       <h1>Team Members</h1>
-      <form>
+      <form onSubmit={submitTeamMember}>
         <div className="inputWrapper">
           <label>Name:</label>
           <input
@@ -88,9 +102,11 @@ function App() {
             value={formValues.projects.project3}
             onChange={changeProjects}
           ></input>
+          
         </div>
+        <button>Submit</button>
       </form>
-      {teamMembers.map((member) => {
+      {teamMembers.map(member => {
         return (
           <div key={member.id} className="memberCard">
             <h2>{member.name}</h2>
@@ -100,7 +116,7 @@ function App() {
               return <li key={index}>{project}</li>
         
             })}
-            
+            <button> Edit</button>
           </div>
         );
       })}

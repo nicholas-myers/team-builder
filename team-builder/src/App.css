@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-size: 2rem;
 }
 
 html {
@@ -24,6 +25,9 @@ h1 {
 h2 {
   font-size: 3rem;
 }
+h4 {
+  text-decoration: underline;
+}
 
 label {
   font-size: 2rem;
@@ -35,19 +39,18 @@ form {
   justify-content: space-around;
   align-items: center;
   flex-flow: column;
-  height: 20vh;
 }
 
 .inputWrapper {
   width:100%;
   display: flex;
   justify-content: space-around;
+  margin: 3% 0;
 }
-/* .container div {
-  width:100%;
-  display: flex;
-  justify-content: space-around;
-} */
+
+input {
+  border: 1px solid black;
+}
 
 .memberCard {
   border: 1px solid black;

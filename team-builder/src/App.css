@@ -55,4 +55,5 @@ form {
   display: flex;
   flex-flow: column;
   align-items: center;  
+  padding: 1rem;
 }

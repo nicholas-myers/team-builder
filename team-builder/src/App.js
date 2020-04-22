@@ -111,15 +111,22 @@ function App() {
       </form>
       {teamMembers.map(member => {
         return (
-          <div key={member.id} className="memberCard">
+          <div key={member.id +1} className="memberCard">
             <h2>{member.name}</h2>
             <h3>On Team: {member.team}</h3>
             <h4>Projects</h4>
-            {!!member.projects && !!member.projects.length && member.projects.map((project, index) => {
+            {member.projects.map((project, index) => {
               return <li key={index}>{project}</li>
         
             })}
-            <button onClick={event => {setMemberToEdit(member)}}> Edit</button>
+            <button onClick={event => {
+              setMemberToEdit(member)
+              setFormValues({
+                ...member,
+                
+              })
+              
+              }}> Edit</button>
           </div>
         );
       })}
